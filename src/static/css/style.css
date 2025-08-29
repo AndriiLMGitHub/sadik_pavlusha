@@ -853,7 +853,9 @@ h1 {
 .map-link:hover {
   background: #ff8a80;
 }
+.admin-panel-button {
 
+}
 .admin-panel-button a {
   display: block;
   background: #fff;
@@ -864,15 +866,14 @@ h1 {
 .admin-panel-button a:hover {
   background-color: #f7f7f7;
 }
+/*---------------*/
+
 
 .gallery-photo {
     width: 305px;
     height: 438px;
     object-fit: cover;
+    border-radius:30px;
 }
 
-.gallery-photo:hover {
-    transform: scale(1.05);
-    border-radius: 15px;
-}
 

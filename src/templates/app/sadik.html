@@ -1,43 +1,27 @@
 {% load static %}
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <!-- Необходимые мета-теги всегда на первом месте -->
     <meta charset="utf-8"/>
-    <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
-
-    <!-- Заголовок страницы -->
     <title>Павлуша</title>
-
-    <!-- Таблиця(і) стилів-->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}"/>
-    <link rel="stylesheet" type="text/css" href="{% static 'fonts/fonts.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}"/>
     <link href="{% static 'css/jquery.jgrowl.css' %}" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="{% static 'css/animate.css' %}"/>
-    <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-    />
-    <link
-            href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-            rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 
     <!-- jQuery -->
     <script src="https://maps.googleapis.com/maps/api/js?key="></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script type="text/javascript" src="{% static 'js/slick.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/jquery.jgrowl.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/feedback.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
-    <script type="text/javascript" src="{% static 'js/resp-m.js' %}"></script>
-    <script type="text/javascript">
+    <script src="{% static 'js/slick.min.js' %}"></script>
+    <script src="{% static 'js/jquery.jgrowl.js' %}"></script>
+    <script src="{% static 'js/wow.min.js' %}"></script>
+    <script src="{% static 'js/resp-m.js' %}"></script>
+    <script>
         new WOW().init();
     </script>
     <script type="text/javascript">
@@ -69,42 +53,8 @@
             });
         });
     </script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $("#menu, .btn-watch, .resp-m").on("click", "a", function (event) {
-                //отменяем стандартную обработку нажатия по ссылке
-                event.preventDefault();
-                //забираем идентификатор бока с атрибута href
-                var id = $(this).attr("href"),
-                    //узнаем высоту от начала страницы до блока на который ссылается якорь
-                    top = $(id).offset().top;
-                //анимируем переход на расстояние - top за 1500 мс
-                $("body,html").animate({scrollTop: top}, 1500);
-            });
-        });
-    </script>
-    <script type="text/javascript">
-        var top_show = 150; // В каком положении полосы прокрутки начинать показ кнопки "Наверх"
-        var delay = 1000; // Задержка прокрутки
-        $(document).ready(function () {
-            $(window).scroll(function () {
-                // При прокрутке попадаем в эту функцию
-                /* В зависимости от положения полосы прокрукти и значения top_show, скрываем или открываем кнопку "Наверх" */
-                if ($(this).scrollTop() > top_show) $("#top").fadeIn();
-                else $("#top").fadeOut();
-            });
-            $("#top").click(function () {
-                // При клике по кнопке "Наверх" попадаем в эту функцию
-                /* Плавная прокрутка наверх */
-                $("body, html").animate(
-                    {
-                        scrollTop: 0,
-                    },
-                    delay
-                );
-            });
-        });
-    </script>
+    <script src="{% static 'js/menu-animate.js' %}"></script>
+    <script src="{% static 'js/up-button.js' %}"></script>
 </head>
 <body>
 <div class="top-header">
@@ -135,29 +85,29 @@
         <div class="responsive-menu-ic">Меню</div>
         <div class="responsive-menu">
             <ul class="resp-m">
-                <li><a href="">Про нас</a></li>
+                <li><a href="#sectHero">Про нас</a></li>
                 <li><a href="#sect-1">Програми</a></li>
                 <li><a href="#sect-2">Харчування</a></li>
                 <li><a href="#sect-3">Розваги</a></li>
                 <li><a href="#sect-4">Галерея</a></li>
-                <li><a href="#sect-5">Ціни</a></li>
+<!--                <li><a href="#sect-5">Ціни</a></li>-->
                 <li><a href="#sect-6">Контакти</a></li>
             </ul>
         </div>
         <div class="nav-bar">
             <ul id="menu">
-                <li><a href="">Про нас</a></li>
+                <li><a href="#sectHero">Про нас</a></li>
                 <li><a href="#sect-1">Програми</a></li>
                 <li><a href="#sect-2">Харчування</a></li>
                 <li><a href="#sect-3">Розваги</a></li>
                 <li><a href="#sect-4">Галерея</a></li>
-                <li><a href="#sect-5">Ціни</a></li>
+<!--                <li><a href="#sect-5">Ціни</a></li>-->
                 <li><a href="#sect-6">Контакти</a></li>
             </ul>
         </div>
     </div>
 </div>
-<div class="banner-place">
+<div class="banner-place" id="sectHero">
     <div class="container">
         <div class="banner-place-content">
             <!-- <p>
@@ -167,7 +117,7 @@
                 >Студія розвитку «Павлуша»
               </a>
             </p> -->
-            <h2>Дитячий садок</h2>
+            <h2>Приватний садок Павлуша</h2>
             <div class="flex align-center justify-center">
                 <p class="main-img image-container">
                     <img
@@ -197,7 +147,7 @@
 <div class="clouds-up"></div>
 <div class="services">
     <div class="container">
-        <h1>Ось, що чекає на Вашого малюка</h1>
+        <h1>Ось, що чекає на Вашого мал<span style="letter-spacing: 13px">ю</span>ка</h1>
         <h3 class="divider-1"></h3>
         <div class="services-wrap">
             <div
@@ -214,7 +164,7 @@
                     data-wow-delay="0s"
             >
                 <p><img src="{% static 'images/img-serv-2.png' %}" alt="***"/></p>
-                <p>Сучасний розвток</p>
+                <p>Сучасні заняття з<br/> розвитку дітей</p>
             </div>
             <div
                     class="item-services wow zoomIn"
@@ -267,7 +217,7 @@
 <div class="clouds-middle"></div>
 <div class="sect-grow-kids" id="sect-1">
     <div class="container">
-        <h1>Розвиток вашого малюка</h1>
+        <h1>Розвиток вашого мал<span style="letter-spacing: 13px">ю</span>ка</h1>
         <p>
             Сучасний ровиток по індивідуально розробленій<br/>
             програмі нашим методистом
@@ -340,13 +290,13 @@
                 <img src="{% static 'images/boy-img-2.png' %}" alt="***"/>
             </div>
         </div>
-        <div class="desc-ll">
-            <p>
-                Додатково до основної програми - вивчення
-                <span style="color: #fbb514">англійської мови</span> і
-                <span style="color: #0c9ed3">bebi-фітнес</span>
-            </p>
-        </div>
+        <!--        <div class="desc-ll">-->
+        <!--            <p>-->
+        <!--                Додатково до основної програми - вивчення-->
+        <!--                <span style="color: #fbb514">англійської мови</span> і-->
+        <!--                <span style="color: #0c9ed3">bebi-фітнес</span>-->
+        <!--            </p>-->
+        <!--        </div>-->
     </div>
     <div class="bottom-circle"></div>
 </div>
@@ -382,14 +332,14 @@
                 <p>Компоти тільки із <br/>свіжих фруктів</p>
             </div>
         </div>
-        <div class="garden-food wow flipInX" data-wow-duration="2s">
-            <div><img src="{% static 'images/food-4.png' %}" alt="***"/></div>
-            <p>
-                В літній період всі овочі з грядки, так як є власний невелий
-                городик.<br/>
-                Для приготуванні їжі використовують тільки найсвіжіші продукти.
-            </p>
-        </div>
+        <!--        <div class="garden-food wow flipInX" data-wow-duration="2s">-->
+        <!--            <div><img src="{% static 'images/food-4.png' %}" alt="***"/></div>-->
+        <!--            <p>-->
+        <!--                В літній період всі овочі з грядки, так як є власний невелий-->
+        <!--                городик.<br/>-->
+        <!--                Для приготуванні їжі використовують тільки найсвіжіші продукти.-->
+        <!--            </p>-->
+        <!--        </div>-->
     </div>
 </div>
 <div class="divider-green"></div>
@@ -416,24 +366,6 @@
                     <div class="up-boy"></div>
                 </div>
                 <div
-                        class="item-play-2 own-class wow bounceIn"
-                        data-wow-duration="2s"
-                >
-                    <div class="dashed">
-                        <div><img src="{% static 'images/ic-leaf.png' %}" alt="***"/></div>
-                        <p>
-                            В саду є свій не великий город, де можна як вчити дітей
-                            (вивчення домашніх рослин: фрукти, овочі, їх назви і
-                            особливості), так і викликати у них любов до природи. Малюки
-                            вчаться доглядати за овочами, спостерігати як розвивається
-                            рослина на кожному етапі її розвитку.
-                        </p>
-                    </div>
-                    <div class="up-girl"></div>
-                </div>
-            </div>
-            <div class="wrap-sect-play-2">
-                <div
                         class="item-play-3 own-class wow bounceIn"
                         data-wow-duration="2s"
                 >
@@ -443,20 +375,50 @@
                             Також є майданчик з плитки, де можна поганяти на толокарах.
                         </p>
                     </div>
+                    <div class="up-girl"></div>
                 </div>
-                <div
-                        class="item-play-4 own-class wow bounceIn"
-                        data-wow-duration="2s"
-                >
-                    <div class="dashed">
-                        <div><img src="{% static 'images/ic-bunny.png' %}" alt="***"/></div>
-                        <p>
-                            Так і в саду живе кролик Крош. Дітки з задоволенням годують
-                            його, разом з тим вчаться правильній поведінці з тваринами.
-                        </p>
-                    </div>
-                </div>
+                <!--                <div-->
+                <!--                        class="item-play-2 own-class wow bounceIn"-->
+                <!--                        data-wow-duration="2s"-->
+                <!--                >-->
+                <!--                    <div class="dashed">-->
+                <!--                        <div><img src="{% static 'images/ic-leaf.png' %}" alt="***"/></div>-->
+                <!--                        <p>-->
+                <!--                            В саду є свій не великий город, де можна як вчити дітей-->
+                <!--                            (вивчення домашніх рослин: фрукти, овочі, їх назви і-->
+                <!--                            особливості), так і викликати у них любов до природи. Малюки-->
+                <!--                            вчаться доглядати за овочами, спостерігати як розвивається-->
+                <!--                            рослина на кожному етапі її розвитку.-->
+                <!--                        </p>-->
+                <!--                    </div>-->
+                <!--                    <div class="up-girl"></div>-->
+                <!--                </div>-->
             </div>
+<!--            <div class="wrap-sect-play-2">-->
+<!--                <div-->
+<!--                        class="item-play-3 own-class wow bounceIn"-->
+<!--                        data-wow-duration="2s"-->
+<!--                >-->
+<!--                    <div class="dashed">-->
+<!--                        <div><img src="{% static 'images/ic-car.png' %}" alt="***"/></div>-->
+<!--                        <p>-->
+<!--                            Також є майданчик з плитки, де можна поганяти на толокарах.-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div-->
+<!--                        class="item-play-4 own-class wow bounceIn"-->
+<!--                        data-wow-duration="2s"-->
+<!--                >-->
+<!--                    <div class="dashed">-->
+<!--                        <div><img src="{% static 'images/ic-bunny.png' %}" alt="***"/></div>-->
+<!--                        <p>-->
+<!--                            Так і в саду живе кролик Крош. Дітки з задоволенням годують-->
+<!--                            його, разом з тим вчаться правильній поведінці з тваринами.-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </div>
 </div>
@@ -466,41 +428,11 @@
         <h1>Фотогалерея</h1>
         <h3 class="divider-1"></h3>
         <div class="wrap-main-slider">
-            <div><img src="images/new-image-1-1.png" alt="***"/></div>
-            <div><img src="images/new-image-2-1.png" alt="***"/></div>
-            <div><img src="images/new-image-3-1.png" alt="***"/></div>
-            <div><img src="images/new-image-4-1.png" alt="***"/></div>
-            <div><img src="images/img-slide-1.png" alt="***"/></div>
-            <div><img src="images/img-slide-2.png" alt="***"/></div>
-            <div><img src="images/img-slide-3.png" alt="***"/></div>
-            <div><img src="images/img-slide-4.png" alt="***"/></div>
-            <div><img src="images/img-slide-5.png" alt="***"/></div>
-            <div><img src="images/img-slide-6.png" alt="***"/></div>
-            <div><img src="images/img-slide-7.png" alt="***"/></div>
-            <div><img src="images/img-slide-8.png" alt="***"/></div>
-            <div><img src="images/img-slide-9.png" alt="***"/></div>
-            <div><img src="images/img-slide-10.png" alt="***"/></div>
-            <div><img src="images/img-slide-11.png" alt="***"/></div>
-            <div><img src="images/img-slide-12.png" alt="***"/></div>
-            <div><img src="images/img-slide-13.png" alt="***"/></div>
-            <div><img src="images/img-slide-14.png" alt="***"/></div>
-            <div><img src="images/img-slide-15.png" alt="***"/></div>
-            <div><img src="images/img-slide-16.png" alt="***"/></div>
-            <div><img src="images/img-slide-17.png" alt="***"/></div>
-            <div><img src="images/img-slide-18.png" alt="***"/></div>
-            <div><img src="images/img-slide-19.png" alt="***"/></div>
-            <div><img src="images/img-slide-20.png" alt="***"/></div>
-            <div><img src="images/img-slide-21.png" alt="***"/></div>
-            <div><img src="images/img-slide-22.png" alt="***"/></div>
-            <div><img src="images/img-slide-23.png" alt="***"/></div>
-            <div><img src="images/img-slide-24.png" alt="***"/></div>
-            <div><img src="images/img-slide-25.png" alt="***"/></div>
-            <div><img src="images/img-slide-26.png" alt="***"/></div>
-            <div><img src="images/img-slide-27.png" alt="***"/></div>
-            <div><img src="images/img-slide-28.png" alt="***"/></div>
-            <div><img src="images/img-slide-29.png" alt="***"/></div>
-            <div><img src="images/img-slide-30.png" alt="***"/></div>
-            <div><img src="images/img-slide-31.png" alt="***"/></div>
+            <div><img src="{% static 'images/new-image-1-1.png' %}" alt="***"/></div>
+            <div><img src="{% static 'images/new-image-2-1.png' %}" alt="***"/></div>
+            <div><img src="{% static 'images/new-image-2-1.png' %}" alt="***"/></div>
+            <div><img src="{% static 'images/new-image-2-1.png' %}" alt="***"/></div>
+            <div><img src="{% static 'images/new-image-2-1.png' %}" alt="***"/></div>
         </div>
     </div>
     <!--<div class="bottom-circle"></div>-->
@@ -542,10 +474,10 @@
         <h1>Контакти</h1>
         <h3 class="divider-1"></h3>
         <div class="wrap-contacts-blocks">
-<!--            <div class="contact-card">-->
-<!--                <h5>Наша адреса</h5>-->
-<!--                <p>м. Ірпінь, вул., Северинівська, 106-А</p>-->
-<!--            </div>-->
+            <!--            <div class="contact-card">-->
+            <!--                <h5>Наша адреса</h5>-->
+            <!--                <p>м. Ірпінь, вул., Северинівська, 106-А</p>-->
+            <!--            </div>-->
             <div class="contact-card map-panel">
                 <h5>Як нас знайти</h5>
                 <div class="map-wrapper">

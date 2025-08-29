@@ -1,0 +1,143 @@
+body {
+  font-family: "Comic Sans MS", "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  /* background-color: #ffe4b5; Світлий бежевий фон */
+  color: #333;
+  line-height: 1.6;
+}
+
+.nav-bar ul {
+  text-align: center;
+}
+
+/* Заголовок */
+header {
+  background: linear-gradient(45deg, #ffcc00, #ff9966);
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 5px solid #ff9966;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 2px 2px #ff9966;
+}
+
+/* Меню */
+nav {
+  background-color: #66ccff;
+  padding: 10px 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 5px 15px;
+  background: #ff9966;
+  border-radius: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  background: #ffcc00;
+  color: #333;
+  transform: scale(1.1);
+}
+
+/* Секції */
+section {
+  padding: 20px;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  max-width: 900px;
+  border: 3px solid #ff9966;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #ff9966;
+  text-transform: uppercase;
+  text-shadow: 1px 1px #ffcc00;
+}
+
+section h3 {
+  margin-top: 20px;
+  color: #ff9966;
+  font-size: 1.8em;
+  text-shadow: 1px 1px #ffcc00;
+}
+
+section p,
+section ul {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+section ul {
+  padding-left: 20px;
+}
+
+section ul li {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1em;
+}
+
+/* Кнопки */
+button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #ff9966;
+  color: #fff;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #ffcc00;
+  color: #333;
+}
+
+/* Футер */
+footer {
+  text-align: center;
+  background: linear-gradient(45deg, #ff9966, #ffcc00);
+  color: #fff;
+  padding: 15px 0;
+  margin-top: 20px;
+  border-top: 5px solid #ff9966;
+  font-size: 1em;
+  box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  margin: 0;
+}

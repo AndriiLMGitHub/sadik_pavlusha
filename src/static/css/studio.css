@@ -1,0 +1,80 @@
+.banner-place-content {
+  background: url(../images/main-logo-png.png) no-repeat center center !important;
+}
+
+.banner-place-1 {
+  background-size: contain;
+  text-align: center;
+}
+
+.b-1 {
+  font-family: "Decorlz Regular";
+  font-size: 30px;
+  color: #e97e00;
+  padding-top: 100px;
+  padding-bottom: 30px;
+}
+
+.b-1 h3 {
+  margin-top: 20px;
+  color: #2c98ff;
+  font-size: 1.8em;
+}
+
+.item-lesson {
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 25px;
+}
+
+.bordered {
+  border: 1px dashed #fefefe;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.item-lesson ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bg-color-1 {
+  background-color: aquamarine;
+  color: rgb(20, 147, 105);
+}
+
+.bg-color-2 {
+  background-color: lightblue;
+  color: rgb(93, 141, 157);
+}
+
+.bg-color-3 {
+  background-color: lightgreen;
+  color: rgb(87, 148, 87);
+}
+
+.bg-color-4 {
+  background-color: lightpink;
+  color: rgb(155, 100, 108);
+}
+
+.bg-color-5 {
+  background-color: rgb(253, 211, 235);
+  color: rgb(140, 89, 128);
+}
+
+.bg-color-6 {
+  background-color: lightgray;
+  color: rgb(153, 153, 153);
+}
+
+.bg-color-7 {
+  background-color: lightcoral;
+  color: rgb(139, 69, 19);
+}
+
+.bg-color-8 {
+  background-color: lightgoldenrod;
+  color: rgb(255, 215, 0);
+}

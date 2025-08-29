@@ -37,6 +37,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -100,17 +101,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.0/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
-
-USE_I18N = True
-
-USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -129,3 +119,32 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Internationalization
+# https://docs.djangoproject.com/en/4.0/topics/i18n/
+
+# Активуємо міжнародну підтримку
+USE_I18N = True
+
+# Активуємо локалізацію дат/чисел
+USE_L10N = True
+
+# Активуємо часові пояси
+USE_TZ = True
+
+# Встановлюємо мову за замовчуванням українську
+LANGUAGE_CODE = 'uk'
+
+# Часовий пояс вашої країни
+TIME_ZONE = 'Europe/Kiev'
+
+# Доступні мови (можна додати англійську як fallback)
+LANGUAGES = [
+    ('uk', 'Українська'),
+    ('en', 'English'),
+]
+
+# Шляхи для перекладів (якщо використовуєте власні переклади)
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]

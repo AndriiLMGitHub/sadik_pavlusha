@@ -5,14 +5,43 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+
+    <!-- SEO Meta Tags -->
+    <title>Приватний дитячий садок «Павлуша» в Ірпені - розвиток дітей 2-6 років</title>
+    <meta name="description"
+          content="Приватний дитячий садок «Павлуша» в Ірпені. Догляд та розвиток дітей від 2 до 6 років. 5-разове харчування, англійська мова, танці, відеонагляд. Тел: +38 (097) 441-16-34"/>
+    <meta name="keywords"
+          content="дитячий садок Ірпінь, приватний садочок, розвиток дітей, садок повного дня, англійська для дітей, дошкільна освіта"/>
+    <meta name="author" content="Приватний садок Павлуша"/>
+    <meta name="robots" content="index, follow"/>
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Приватний дитячий садок «Павлуша» в Ірпені"/>
+    <meta property="og:description"
+          content="Догляд та розвиток дітей від 2 до 6 років. 5-разове харчування, сучасні програми розвитку, англійська мова"/>
+    <meta property="og:image" content="{% static 'images/logo.png' %}"/>
+    <meta property="og:url" content="https://pavlusha-sadok.com"/>
+    <meta property="og:locale" content="uk_UA"/>
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Приватний дитячий садок «Павлуша» в Ірпені"/>
+    <meta name="twitter:description" content="Догляд та розвиток дітей від 2 до 6 років"/>
+    <meta name="twitter:image" content="{% static 'images/logo.png' %}"/>
     <title>Павлуша</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'images/sun-foggy-line.png' %}"/>
+    <link rel="apple-touch-icon" href="{% static 'images/sun-foggy-line.png' %}"/>
+
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/responsive.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/slick.css' %}"/>
     <link href="{% static 'css/jquery.jgrowl.css' %}" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="{% static 'css/animate.css' %}"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -20,10 +49,12 @@
     <script src="{% static 'js/jquery.jgrowl.js' %}"></script>
     <script src="{% static 'js/wow.min.js' %}"></script>
     <script src="{% static 'js/resp-m.js' %}"></script>
+    <script src="{% static 'js/menu-animate.js' %}"></script>
+    <script src="{% static 'js/up-button.js' %}"></script>
     <script>
         new WOW().init();
     </script>
-    <script type="text/javascript">
+    <script>
         $(document).ready(function () {
             $(".wrap-main-slider").slick({
                 slidesToShow: 3,
@@ -52,8 +83,6 @@
             });
         });
     </script>
-    <script src="{% static 'js/menu-animate.js' %}"></script>
-    <script src="{% static 'js/up-button.js' %}"></script>
 </head>
 <body>
 <div class="top-header">
@@ -69,6 +98,13 @@
                 <i class="ri-map-pin-line"></i>
                 <span>м. Ірпінь, вул., Северинівська, 106-А</span>
             </div>
+            {% if request.user.is_superuser %}
+            <div class="admin-panel-button">
+                <a href="{% url 'admin:index' %}">
+                    Admin
+                </a>
+            </div>
+            {% endif %}
             <div class="phone-box">
                 <a href="tel:+38 (097) 441-16-34">
                     <i class="ri-phone-fill"></i>
@@ -89,7 +125,6 @@
                 <li><a href="#sect-2">Харчування</a></li>
                 <li><a href="#sect-3">Розваги</a></li>
                 <li><a href="#sect-4">Галерея</a></li>
-<!--                <li><a href="#sect-5">Ціни</a></li>-->
                 <li><a href="#sect-6">Контакти</a></li>
             </ul>
         </div>
@@ -100,7 +135,6 @@
                 <li><a href="#sect-2">Харчування</a></li>
                 <li><a href="#sect-3">Розваги</a></li>
                 <li><a href="#sect-4">Галерея</a></li>
-<!--                <li><a href="#sect-5">Ціни</a></li>-->
                 <li><a href="#sect-6">Контакти</a></li>
             </ul>
         </div>
@@ -393,31 +427,31 @@
                 <!--                    <div class="up-girl"></div>-->
                 <!--                </div>-->
             </div>
-<!--            <div class="wrap-sect-play-2">-->
-<!--                <div-->
-<!--                        class="item-play-3 own-class wow bounceIn"-->
-<!--                        data-wow-duration="2s"-->
-<!--                >-->
-<!--                    <div class="dashed">-->
-<!--                        <div><img src="{% static 'images/ic-car.png' %}" alt="***"/></div>-->
-<!--                        <p>-->
-<!--                            Також є майданчик з плитки, де можна поганяти на толокарах.-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div-->
-<!--                        class="item-play-4 own-class wow bounceIn"-->
-<!--                        data-wow-duration="2s"-->
-<!--                >-->
-<!--                    <div class="dashed">-->
-<!--                        <div><img src="{% static 'images/ic-bunny.png' %}" alt="***"/></div>-->
-<!--                        <p>-->
-<!--                            Так і в саду живе кролик Крош. Дітки з задоволенням годують-->
-<!--                            його, разом з тим вчаться правильній поведінці з тваринами.-->
-<!--                        </p>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
+            <!--            <div class="wrap-sect-play-2">-->
+            <!--                <div-->
+            <!--                        class="item-play-3 own-class wow bounceIn"-->
+            <!--                        data-wow-duration="2s"-->
+            <!--                >-->
+            <!--                    <div class="dashed">-->
+            <!--                        <div><img src="{% static 'images/ic-car.png' %}" alt="***"/></div>-->
+            <!--                        <p>-->
+            <!--                            Також є майданчик з плитки, де можна поганяти на толокарах.-->
+            <!--                        </p>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--                <div-->
+            <!--                        class="item-play-4 own-class wow bounceIn"-->
+            <!--                        data-wow-duration="2s"-->
+            <!--                >-->
+            <!--                    <div class="dashed">-->
+            <!--                        <div><img src="{% static 'images/ic-bunny.png' %}" alt="***"/></div>-->
+            <!--                        <p>-->
+            <!--                            Так і в саду живе кролик Крош. Дітки з задоволенням годують-->
+            <!--                            його, разом з тим вчаться правильній поведінці з тваринами.-->
+            <!--                        </p>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
         </div>
     </div>
 </div>
@@ -427,11 +461,19 @@
         <h1>Фотогалерея</h1>
         <h3 class="divider-1"></h3>
         <div class="wrap-main-slider">
-            <div><img src="{% static 'images/new-image-1-1.png' %}" alt="***"/></div>
-            <div><img src="{% static 'images/new-image-2-1.png' %}" alt="***"/></div>
-            <div><img src="{% static 'images/new-image-2-1.png' %}" alt="***"/></div>
-            <div><img src="{% static 'images/new-image-2-1.png' %}" alt="***"/></div>
-            <div><img src="{% static 'images/new-image-2-1.png' %}" alt="***"/></div>
+            {% if photos %}
+            {% for photo in photos %}
+            <div>
+                <img
+                    src="{{ photo.image.url }}"
+                    alt="{% if photo.title %}{{ photo.title }}{{ photo.image.url}}{% else %}{% endif %}"
+                    class="gallery-photo"
+                />
+            </div>
+            {% endfor %}
+            {% else %}
+            <h1>Пока немає фотографій</h1>
+            {% endif %}
         </div>
     </div>
     <!--<div class="bottom-circle"></div>-->

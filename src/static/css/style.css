@@ -853,3 +853,26 @@ h1 {
 .map-link:hover {
   background: #ff8a80;
 }
+
+.admin-panel-button a {
+  display: block;
+  background: #fff;
+  border-radius: 15px;
+  padding: 10px 13px;
+  color: #007ad0;
+}
+.admin-panel-button a:hover {
+  background-color: #f7f7f7;
+}
+
+.gallery-photo {
+    width: 305px;
+    height: 438px;
+    object-fit: cover;
+}
+
+.gallery-photo:hover {
+    transform: scale(1.05);
+    border-radius: 15px;
+}
+
